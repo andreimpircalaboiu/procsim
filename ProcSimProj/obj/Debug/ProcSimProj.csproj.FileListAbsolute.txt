@@ -1,0 +1,6 @@
+E:\Projects\ProcSimProj\ProcSimProj\bin\Debug\ProcSimProj.dll.config
+E:\Projects\ProcSimProj\ProcSimProj\bin\Debug\ProcSimProj.dll
+E:\Projects\ProcSimProj\ProcSimProj\bin\Debug\ProcSimProj.pdb
+E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.csprojResolveAssemblyReference.cache
+E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.dll
+E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.pdb

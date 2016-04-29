@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A6CC5B3-8A04-4687-B63B-76C8EC7D1E20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProcSimProj</RootNamespace>
+    <AssemblyName>ProcSimProj</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\BOs\DiverseInstructionBo.cs" />
+    <Compile Include="Business\BOs\ErrorBo.cs" />
+    <Compile Include="Business\BOs\IInstruction.cs" />
+    <Compile Include="Business\BOs\InstructionBo.cs" />
+    <Compile Include="Business\BOs\InstructionCodeBo.cs" />
+    <Compile Include="Business\BOs\BinaryInstructionBo.cs" />
+    <Compile Include="Business\BOs\JumpInstructionBo.cs" />
+    <Compile Include="Business\BOs\UnaryInstructionBo.cs" />
+    <Compile Include="Business\Constants\ErrorType.cs" />
+    <Compile Include="Business\Requests\ItemIdRequestBo.cs" />
+    <Compile Include="Business\Requests\ItemRequestBo.cs" />
+    <Compile Include="Business\Requests\RequestBo.cs" />
+    <Compile Include="Business\Responses\ItemResponseBo.cs" />
+    <Compile Include="Business\Responses\ListResponseBo.cs" />
+    <Compile Include="Business\Responses\ResponseBo.cs" />
+    <Compile Include="Converter\BinaryConverter.cs" />
+    <Compile Include="Business\Constants\AdressingType.cs" />
+    <Compile Include="Business\Constants\InstructionCodeType.cs" />
+    <Compile Include="Business\Constants\InstructionExtensions.cs" />
+    <Compile Include="Business\Constants\InstructionHelper.cs" />
+    <Compile Include="Business\Constants\InstructionType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\Generics\" />
+    <Folder Include="Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
