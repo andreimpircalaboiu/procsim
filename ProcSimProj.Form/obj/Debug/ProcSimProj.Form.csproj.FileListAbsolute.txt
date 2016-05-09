@@ -1,0 +1,12 @@
+D:\Git\procsim\ProcSimProj.Form\bin\Debug\ProcSimProj.Form.exe.config
+D:\Git\procsim\ProcSimProj.Form\bin\Debug\ProcSimProj.Form.exe
+D:\Git\procsim\ProcSimProj.Form\bin\Debug\ProcSimProj.Form.pdb
+D:\Git\procsim\ProcSimProj.Form\bin\Debug\ProcSimProj.dll
+D:\Git\procsim\ProcSimProj.Form\bin\Debug\ProcSimProj.pdb
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.csprojResolveAssemblyReference.cache
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.MainForm.resources
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.Properties.Resources.resources
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.csproj.GenerateResource.Cache
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.exe
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.pdb
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.ProcessorForm.resources

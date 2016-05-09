@@ -1,7 +1,7 @@
 ﻿using System;
 using ProcSimProj.Business.Constants;
 
-namespace ProcSimProj.Business.BOs
+namespace ProcSimProj.Business.Generics
 {
     public class ErrorBo
     {

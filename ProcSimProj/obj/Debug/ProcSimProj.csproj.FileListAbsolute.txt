@@ -4,3 +4,9 @@ E:\Projects\ProcSimProj\ProcSimProj\bin\Debug\ProcSimProj.pdb
 E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.csprojResolveAssemblyReference.cache
 E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.dll
 E:\Projects\ProcSimProj\ProcSimProj\obj\Debug\ProcSimProj.pdb
+D:\Git\procsim\ProcSimProj\obj\Debug\ProcSimProj.dll
+D:\Git\procsim\ProcSimProj\obj\Debug\ProcSimProj.pdb
+D:\Git\procsim\ProcSimProj\bin\Debug\ProcSimProj.dll.config
+D:\Git\procsim\ProcSimProj\bin\Debug\ProcSimProj.dll
+D:\Git\procsim\ProcSimProj\bin\Debug\ProcSimProj.pdb
+D:\Git\procsim\ProcSimProj\obj\Debug\ProcSimProj.csprojResolveAssemblyReference.cache

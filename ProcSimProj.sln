@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcSimProj", "ProcSimProj\ProcSimProj.csproj", "{4A6CC5B3-8A04-4687-B63B-76C8EC7D1E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcSimProj.Form", "ProcSimProj.Form\ProcSimProj.Form.csproj", "{BBD086E3-1B3A-4A17-956D-8736C6796F9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4A6CC5B3-8A04-4687-B63B-76C8EC7D1E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A6CC5B3-8A04-4687-B63B-76C8EC7D1E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A6CC5B3-8A04-4687-B63B-76C8EC7D1E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD086E3-1B3A-4A17-956D-8736C6796F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD086E3-1B3A-4A17-956D-8736C6796F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD086E3-1B3A-4A17-956D-8736C6796F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD086E3-1B3A-4A17-956D-8736C6796F9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

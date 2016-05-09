@@ -1,6 +1,6 @@
 ﻿using ProcSimProj.Business.Constants;
 
-namespace ProcSimProj.Business.BOs
+namespace ProcSimProj.Business.Instructions.Generic
 {
     public class InstructionCodeBo
     {

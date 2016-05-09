@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProcSimProj</RootNamespace>
     <AssemblyName>ProcSimProj</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,15 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\BOs\DiverseInstructionBo.cs" />
-    <Compile Include="Business\BOs\ErrorBo.cs" />
-    <Compile Include="Business\BOs\IInstruction.cs" />
-    <Compile Include="Business\BOs\InstructionBo.cs" />
-    <Compile Include="Business\BOs\InstructionCodeBo.cs" />
-    <Compile Include="Business\BOs\BinaryInstructionBo.cs" />
-    <Compile Include="Business\BOs\JumpInstructionBo.cs" />
-    <Compile Include="Business\BOs\UnaryInstructionBo.cs" />
+    <Compile Include="Architecture\RAM\Location.cs" />
+    <Compile Include="Architecture\RAM\Memory.cs" />
+    <Compile Include="Architecture\CPU\Processor.cs" />
+    <Compile Include="Architecture\ArchitectureHelper.cs" />
+    <Compile Include="Architecture\CPU\Register.cs" />
+    <Compile Include="Business\Instructions\Generic\DiverseInstructionBo.cs" />
+    <Compile Include="Business\Generics\ErrorBo.cs" />
+    <Compile Include="Business\Instructions\Generic\IInstruction.cs" />
+    <Compile Include="Business\Instructions\Generic\InstructionBo.cs" />
+    <Compile Include="Business\Instructions\Generic\InstructionCodeBo.cs" />
+    <Compile Include="Business\Instructions\Generic\BinaryInstructionBo.cs" />
+    <Compile Include="Business\Instructions\Generic\JumpInstructionBo.cs" />
+    <Compile Include="Business\Instructions\Generic\UnaryInstructionBo.cs" />
     <Compile Include="Business\Constants\ErrorType.cs" />
+    <Compile Include="Business\Instructions\InstructionFactory.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\AddInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\AndInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\CmpInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\MovInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\OrInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\SubInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Binary\XorInstruction.cs" />
     <Compile Include="Business\Requests\ItemIdRequestBo.cs" />
     <Compile Include="Business\Requests\ItemRequestBo.cs" />
     <Compile Include="Business\Requests\RequestBo.cs" />
@@ -64,7 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business\Generics\" />
     <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
