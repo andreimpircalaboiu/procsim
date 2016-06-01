@@ -1,4 +1,5 @@
-﻿using ProcSimProj.Business.Constants;
+﻿using System.Security.Cryptography.X509Certificates;
+using ProcSimProj.Business.Constants;
 
 namespace ProcSimProj.Business.Instructions.Generic
 {
@@ -19,5 +20,19 @@ namespace ProcSimProj.Business.Instructions.Generic
         public string Text { get; private set; }
         public InstructionType InstructionType { get; private set; }
         public InstructionCodeType InstructionCodeType { get; private set; }
+    }
+
+    public class MicroOperation
+    {
+        public string Text { get; private set; }
+        public MicrointstructionType MicroType { get; private set; }
+        public byte Value { get; set; }
+
+        public MicroOperation(string text, byte value, MicrointstructionType microType)
+        {
+            Text = text;
+            Value = value;
+            MicroType = microType;
+        }
     }
 }

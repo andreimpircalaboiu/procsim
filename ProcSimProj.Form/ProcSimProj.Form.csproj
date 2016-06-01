@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MicroinstructionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroinstructionsForm.Designer.cs">
+      <DependentUpon>MicroinstructionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\InstructionViewModel.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -51,19 +57,31 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessorForm.cs">
+    <Compile Include="ProcessorWForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcessorForm.Designer.cs">
-      <DependentUpon>ProcessorForm.cs</DependentUpon>
+    <Compile Include="ProcessorWForm.Designer.cs">
+      <DependentUpon>ProcessorWForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessorWOForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessorWOForm.Designer.cs">
+      <DependentUpon>ProcessorWOForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcessorForm.resx">
-      <DependentUpon>ProcessorForm.cs</DependentUpon>
+    <EmbeddedResource Include="MicroinstructionsForm.resx">
+      <DependentUpon>MicroinstructionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessorWForm.resx">
+      <DependentUpon>ProcessorWForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessorWOForm.resx">
+      <DependentUpon>ProcessorWOForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +92,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\ProcSimProj.Architecture.MicroInstructions.Microinstruction.datasource" />
     <None Include="Properties\DataSources\ProcSimProj.Form.Models.InstructionViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

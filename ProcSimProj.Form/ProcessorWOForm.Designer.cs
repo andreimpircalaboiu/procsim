@@ -1,6 +1,6 @@
 ﻿namespace ProcSimProj.Form
 {
-    partial class ProcessorForm
+    partial class ProcessorWOForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@
             this.BinaryColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AssemblyColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.InstructionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ExecuteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InstructionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.MemoryTextbox.Location = new System.Drawing.Point(699, 27);
             this.MemoryTextbox.Multiline = true;
             this.MemoryTextbox.Name = "MemoryTextbox";
+            this.MemoryTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.MemoryTextbox.Size = new System.Drawing.Size(416, 498);
             this.MemoryTextbox.TabIndex = 2;
             // 
@@ -101,6 +103,7 @@
             this.NextButton.TabIndex = 7;
             this.NextButton.Text = "Next instruction";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // InstructionListBox
             // 
@@ -108,6 +111,9 @@
             this.IndexColumn,
             this.BinaryColumn,
             this.AssemblyColumn});
+            this.InstructionListBox.Enabled = false;
+            this.InstructionListBox.FullRowSelect = true;
+            this.InstructionListBox.HideSelection = false;
             this.InstructionListBox.Location = new System.Drawing.Point(12, 27);
             this.InstructionListBox.Name = "InstructionListBox";
             this.InstructionListBox.Size = new System.Drawing.Size(263, 498);
@@ -133,11 +139,23 @@
             // 
             this.InstructionsBindingSource.DataSource = typeof(ProcSimProj.Form.Models.InstructionViewModel);
             // 
+            // ExecuteButton
+            // 
+            this.ExecuteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExecuteButton.Location = new System.Drawing.Point(843, 531);
+            this.ExecuteButton.Name = "ExecuteButton";
+            this.ExecuteButton.Size = new System.Drawing.Size(133, 34);
+            this.ExecuteButton.TabIndex = 9;
+            this.ExecuteButton.Text = "Execute";
+            this.ExecuteButton.UseVisualStyleBackColor = true;
+            this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
+            // 
             // ProcessorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 572);
+            this.Controls.Add(this.ExecuteButton);
             this.Controls.Add(this.InstructionListBox);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.InstructionLabel);
@@ -168,5 +186,6 @@
         private System.Windows.Forms.ColumnHeader IndexColumn;
         private System.Windows.Forms.ColumnHeader BinaryColumn;
         private System.Windows.Forms.ColumnHeader AssemblyColumn;
+        private System.Windows.Forms.Button ExecuteButton;
     }
 }

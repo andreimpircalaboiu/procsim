@@ -7,6 +7,7 @@ namespace ProcSimProj.Business.Instructions.Generic
     {
         public AdressingType DestinationAddressing { get; set; }
         public string Destination { get; set; }
+        public short DestinationValue { get; set; }
 
         public override string GetInstructionText()
         {

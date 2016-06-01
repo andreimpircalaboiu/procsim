@@ -6,6 +6,6 @@ namespace ProcSimProj.Business.Instructions.Generic
     {
         string CodeText { get; set; }
         InstructionCodeBo CodeBo { get; set; }
-        short Execute(Processor processor);
+        void Execute(Processor processor);
     }
 }

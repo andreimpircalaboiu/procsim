@@ -1,4 +1,6 @@
 ﻿using System;
+using ProcSimProj.Architecture.Shared;
+using ProcSimProj.Business.Constants;
 
 namespace ProcSimProj.Architecture.CPU
 {
@@ -6,19 +8,7 @@ namespace ProcSimProj.Architecture.CPU
     {
         public RegisterType Type { get; set; }
         public short Value { get; set; }
-        public string Binary { get { return Convert.ToString(Value, 2).PadLeft(16, '0'); } }
+        public string Binary { get { return Value.ToBinary(16); } }
         public int Index { get; set; }
-    }
-
-    public enum RegisterType
-    {
-        General,
-        Negative,
-        Flags,
-        ProgramCounter,
-        Mdr,
-        Adr,
-        StackPointer,
-        InstructionRegister
     }
 }

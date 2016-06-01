@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using ProcSimProj.Architecture.CPU;
 using ProcSimProj.Architecture.RAM;
 
-namespace ProcSimProj.Architecture
+namespace ProcSimProj.Architecture.Shared
 {
     public static class ArchitectureHelper
     {
         public static IList<Register> InitGeneralRegisters()
         {
             var result = new List<Register>();
-            for (int counter = 0; counter < 15; counter++)
+            for (int counter = 0; counter < 16; counter++)
             {
                 var item = new Register()
                            {

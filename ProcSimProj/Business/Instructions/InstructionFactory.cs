@@ -63,13 +63,24 @@ namespace ProcSimProj.Business.Instructions
 
         private IInstruction GetUnaryInstruction(string binaryCode)
         {
-            throw new NotImplementedException();
+            var opcode = binaryCode.Substring(0, 10);
+            var instructionCode = InstructionCodes.First(i => i.Binary == opcode);
+            UnaryInstructionBo bo = InstructionHelper.GetUnaryInstructionByCode(instructionCode);
+
+            var dAdressing = binaryCode.Substring(10, 2);
+            bo.DestinationAddressing = InstructionHelper.GetAdressing(dAdressing);
+
+            var destination = binaryCode.Substring(12, 4);
+            bo.Destination = destination;
+            bo.DestinationValue = Convert.ToInt16(destination, 2);
+
+            return bo;
         }
 
         private IInstruction GetBinaryInstruction(string binaryCode)
         {
             var opcode = binaryCode.Substring(0, 4);
-            var instructionCode = _instructionCodes.First(i => i.Binary == opcode);
+            var instructionCode = InstructionCodes.First(i => i.Binary == opcode);
             BinaryInstructionBo bo = InstructionHelper.GetBinaryInstructionByCode(instructionCode);
 
             var dAdressing = binaryCode.Substring(10, 2);

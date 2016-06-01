@@ -10,7 +10,7 @@ namespace ProcSimProj.Business.Instructions.Generic
         {
             return CodeText;
         }
-        public virtual short Execute(Processor processor)
+        public virtual void Execute(Processor processor)
         {
             throw new System.NotImplementedException();
         }

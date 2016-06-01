@@ -9,4 +9,6 @@ D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.Properties.Resources.
 D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.csproj.GenerateResource.Cache
 D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.exe
 D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.pdb
-D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.ProcessorForm.resources
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.ProcessorWForm.resources
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.MicroinstructionsForm.resources
+D:\Git\procsim\ProcSimProj.Form\obj\Debug\ProcSimProj.Form.ProcessorWOForm.resources

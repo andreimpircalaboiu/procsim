@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace ProcSimProj.Form
         public MainForm()
         {
             InitializeComponent();
+            LaunchWButton.Enabled = false;
+            LaunchWOButton.Enabled = false;
         }
 
         public static string InputText
@@ -48,6 +51,8 @@ namespace ProcSimProj.Form
                 var text = GetInstructionText(response);
                 ParsedInputTextbox.Text += text + Environment.NewLine;
             }
+            LaunchWButton.Enabled = true;
+            LaunchWOButton.Enabled = true;
         }
 
         private static string GetInstructionText(ItemResponseBo<IInstruction> response)
@@ -81,7 +86,31 @@ namespace ProcSimProj.Form
         {
             var binary = ParsedInputTextbox.Lines.ToList();
             var assembly = InputTextBox.Lines.ToList();
-            var form = new ProcessorForm(binary, assembly);
+            var form = new ProcessorWOForm(binary, assembly);
+            form.Show();
+        }
+
+        private void ImportButton_Click(object sender, EventArgs e)
+        {
+            if (ImportFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (TextReader textReader = File.OpenText(ImportFileDialog.FileName))
+                {
+                    InputTextBox.Text += textReader.ReadToEnd();
+                }
+            }
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LaunchWButton_Click(object sender, EventArgs e)
+        {
+            var binary = ParsedInputTextbox.Lines.ToList();
+            var assembly = InputTextBox.Lines.ToList();
+            var form = new MicroinstructionsForm(binary, assembly);
             form.Show();
         }
     }

@@ -15,5 +15,6 @@ namespace ProcSimProj.Business.Instructions.Generic
         {
             return CodeText.PadLeft(4, '0') + Convert.ToString((int)SourceAddressing, 2).PadLeft(2, '0') + Source.PadLeft(4, '0') + Convert.ToString((int)DestinationAddressing, 2).PadLeft(2, '0') + Destination.PadLeft(4, '0');
         }
+
     }
 }

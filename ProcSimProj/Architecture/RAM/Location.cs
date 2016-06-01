@@ -1,4 +1,5 @@
 using System;
+using ProcSimProj.Business.Constants;
 
 namespace ProcSimProj.Architecture.RAM
 {
@@ -12,8 +13,8 @@ namespace ProcSimProj.Architecture.RAM
             get
             {
                 return Data != null
-                    ? Convert.ToString(Data.Value, 2).PadLeft(8, '0')
-                    : "00000000";
+                    ? Data.Value.ToBinary(8)
+                    : ((byte)0).ToBinary(8);
             }
         }
 

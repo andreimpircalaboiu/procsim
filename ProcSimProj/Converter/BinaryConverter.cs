@@ -37,7 +37,7 @@ namespace ProcSimProj.Converter
                     items = exception;
                     opcodeText = items[0];
                 }
-                
+
                 var opcode = instructions.FirstOrDefault(i => i.Text == opcodeText);
 
                 if (opcode == null)
@@ -51,7 +51,7 @@ namespace ProcSimProj.Converter
 
                     return response;
                 }
-                
+
                 response = GetInstructionFromOpcode(opcode, items, response, line);
             }
             catch (Exception e)
@@ -61,49 +61,49 @@ namespace ProcSimProj.Converter
             return response;
         }
 
-        private static ItemResponseBo<IInstruction> GetInstructionFromOpcode(InstructionCodeBo opcode, string[] items, ItemResponseBo<IInstruction> response,string line)
+        private static ItemResponseBo<IInstruction> GetInstructionFromOpcode(InstructionCodeBo opcode, string[] items, ItemResponseBo<IInstruction> response, string line)
         {
             switch (opcode.InstructionType)
             {
                 case InstructionType.Binary:
-                {
-                    var instruction = new BinaryInstructionBo
                     {
-                        CodeBo = opcode,
-                        CodeText = opcode.Binary
-                    };
-                    return GetInstructionForBinary(opcode, items, instruction, response, line);
-                }
+                        var instruction = new BinaryInstructionBo
+                        {
+                            CodeBo = opcode,
+                            CodeText = opcode.Binary
+                        };
+                        return GetInstructionForBinary(opcode, items, instruction, response, line);
+                    }
 
                 case InstructionType.Unary:
-                {
-                    var instruction = new UnaryInstructionBo
                     {
-                        CodeBo = opcode,
-                        CodeText = opcode.Binary
-                    };
-                    return GetInstructionForUnary(opcode, items, instruction, response, line);
-                }
+                        var instruction = new UnaryInstructionBo
+                        {
+                            CodeBo = opcode,
+                            CodeText = opcode.Binary
+                        };
+                        return GetInstructionForUnary(opcode, items, instruction, response, line);
+                    }
 
                 case InstructionType.Jump:
-                {
-                    var instruction = new JumpInstructionBo
                     {
-                        CodeBo = opcode,
-                        CodeText = opcode.Binary
-                    };
-                    return GetInstructionForJump(opcode, items, instruction, response, line);
-                }
+                        var instruction = new JumpInstructionBo
+                        {
+                            CodeBo = opcode,
+                            CodeText = opcode.Binary
+                        };
+                        return GetInstructionForJump(opcode, items, instruction, response, line);
+                    }
 
                 case InstructionType.Diverse:
-                {
-                    var instruction = new DiverseInstructionBo
                     {
-                        CodeBo = opcode,
-                        CodeText = opcode.Binary
-                    };
-                    return GetInstructionForDiverse(items, response, instruction, line);
-                }
+                        var instruction = new DiverseInstructionBo
+                        {
+                            CodeBo = opcode,
+                            CodeText = opcode.Binary
+                        };
+                        return GetInstructionForDiverse(items, response, instruction, line);
+                    }
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -117,7 +117,7 @@ namespace ProcSimProj.Converter
                 response.AddError(new ErrorBo()
                 {
                     ErrorType = ErrorType.DiverseInstructionMustBeFormedFromOneElementOnly,
-                    ObjectType = typeof (InstructionBo),
+                    ObjectType = typeof(InstructionBo),
                     Text = String.Format("Diverse instructions must be formed from one elementy only. Faulty expression: {0}", line)
                 });
 
@@ -188,7 +188,7 @@ namespace ProcSimProj.Converter
             return response;
         }
 
-        private static ItemResponseBo<IInstruction>  GetInstructionForBinary(InstructionCodeBo opcode, string[] items, BinaryInstructionBo instruction, ItemResponseBo<IInstruction> response, string line)
+        private static ItemResponseBo<IInstruction> GetInstructionForBinary(InstructionCodeBo opcode, string[] items, BinaryInstructionBo instruction, ItemResponseBo<IInstruction> response, string line)
         {
             if (items.Length != 3)
             {
@@ -202,7 +202,7 @@ namespace ProcSimProj.Converter
                 return response;
             }
 
-            var sourceText = items[1];
+            var sourceText = items[2];
 
             if (InstructionHelper.RegexIndexed.IsMatch(sourceText))
             {
@@ -216,18 +216,23 @@ namespace ProcSimProj.Converter
                 var number = GetNumber(sourceText);
                 instruction.Source = Convert.ToString(number, 2);
             }
+            else if (InstructionHelper.RegexDirect.IsMatch(sourceText))
+            {
+                instruction.SourceAddressing = AdressingType.Direct;
+                instruction.Source = Convert.ToString(Convert.ToInt32(sourceText), 2);
+            }
             else
             {
                 response.AddError(new ErrorBo()
-                {
-                    ErrorType = ErrorType.UnknownSource,
-                    ObjectType = typeof(InstructionBo),
-                    Text = String.Format("This is not a valid source {0} in expression: {1}", sourceText, line)
-                });
+                    {
+                        ErrorType = ErrorType.UnknownSource,
+                        ObjectType = typeof(InstructionBo),
+                        Text = String.Format("This is not a valid source {0} in expression: {1}", sourceText, line)
+                    });
                 return response;
             }
 
-            var destinationText = items[2];
+            var destinationText = items[1];
 
             if (InstructionHelper.RegexIndexed.IsMatch(destinationText))
             {
@@ -240,6 +245,11 @@ namespace ProcSimProj.Converter
                 instruction.DestinationAddressing = AdressingType.Indirect;
                 var number = GetNumber(destinationText);
                 instruction.Destination = Convert.ToString(number, 2);
+            }
+            else if (InstructionHelper.RegexDirect.IsMatch(destinationText))
+            {
+                instruction.DestinationAddressing = AdressingType.Direct;
+                instruction.Destination = Convert.ToString(Convert.ToInt32(destinationText), 2);
             }
             else
             {
@@ -262,7 +272,7 @@ namespace ProcSimProj.Converter
 
             if (matches.Count == 1)
             {
-                int number =  int.Parse(matches[0].Value);
+                int number = int.Parse(matches[0].Value);
                 return number;
             }
             else if (matches.Count > 1)

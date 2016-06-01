@@ -33,7 +33,9 @@
             this.InputButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
-            this.LaunchButton = new System.Windows.Forms.Button();
+            this.LaunchWOButton = new System.Windows.Forms.Button();
+            this.ImportFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.LaunchWButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InputTextBox
@@ -78,6 +80,7 @@
             this.ImportButton.TabIndex = 3;
             this.ImportButton.Text = "Import";
             this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
             // 
             // ExportButton
             // 
@@ -89,25 +92,43 @@
             this.ExportButton.TabIndex = 4;
             this.ExportButton.Text = "Export";
             this.ExportButton.UseVisualStyleBackColor = true;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
-            // LaunchButton
+            // LaunchWOButton
             // 
-            this.LaunchButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.LaunchWOButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LaunchButton.Location = new System.Drawing.Point(9, 364);
-            this.LaunchButton.Name = "LaunchButton";
-            this.LaunchButton.Size = new System.Drawing.Size(418, 41);
-            this.LaunchButton.TabIndex = 5;
-            this.LaunchButton.Text = "Launch";
-            this.LaunchButton.UseVisualStyleBackColor = true;
-            this.LaunchButton.Click += new System.EventHandler(this.LaunchButton_Click);
+            this.LaunchWOButton.Location = new System.Drawing.Point(9, 364);
+            this.LaunchWOButton.Name = "LaunchWOButton";
+            this.LaunchWOButton.Size = new System.Drawing.Size(202, 41);
+            this.LaunchWOButton.TabIndex = 5;
+            this.LaunchWOButton.Text = "W/O Microinstructions";
+            this.LaunchWOButton.UseVisualStyleBackColor = true;
+            this.LaunchWOButton.Click += new System.EventHandler(this.LaunchButton_Click);
+            // 
+            // ImportFileDialog
+            // 
+            this.ImportFileDialog.Filter = "Text Files (*.TXT)|*.txt|Assembly Files (*.ASM)|*.asm|All Files (*.*)|*.*";
+            // 
+            // LaunchWButton
+            // 
+            this.LaunchWButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LaunchWButton.Location = new System.Drawing.Point(225, 364);
+            this.LaunchWButton.Name = "LaunchWButton";
+            this.LaunchWButton.Size = new System.Drawing.Size(202, 41);
+            this.LaunchWButton.TabIndex = 6;
+            this.LaunchWButton.Text = "W/ Microinstructions";
+            this.LaunchWButton.UseVisualStyleBackColor = true;
+            this.LaunchWButton.Click += new System.EventHandler(this.LaunchWButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 411);
-            this.Controls.Add(this.LaunchButton);
+            this.Controls.Add(this.LaunchWButton);
+            this.Controls.Add(this.LaunchWOButton);
             this.Controls.Add(this.ExportButton);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.ParsedInputTextbox);
@@ -127,7 +148,9 @@
         private System.Windows.Forms.Button InputButton;
         private System.Windows.Forms.Button ImportButton;
         private System.Windows.Forms.Button ExportButton;
-        private System.Windows.Forms.Button LaunchButton;
+        private System.Windows.Forms.Button LaunchWOButton;
+        private System.Windows.Forms.OpenFileDialog ImportFileDialog;
+        private System.Windows.Forms.Button LaunchWButton;
     }
 }
 

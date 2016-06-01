@@ -5,9 +5,9 @@ namespace ProcSimProj.Business.Instructions.Specific.Binary
 {
     public class SubInstruction : BinaryInstructionBo
     {
-        public override short Execute(Processor processor)
+        public override void Execute(Processor processor)
         {
-            return 0;
+
         }
     }
 }

@@ -41,11 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Architecture\MicroInstructions\IMicroinstruction.cs" />
+    <Compile Include="Architecture\MicroInstructions\MicroManager.cs" />
+    <Compile Include="Architecture\MicroInstructions\Microinstruction.cs" />
+    <Compile Include="Architecture\MicroInstructions\Microline.cs" />
+    <Compile Include="Architecture\Shared\RegisterType.cs" />
+    <Compile Include="Architecture\CPU\UnsignedRegister.cs" />
     <Compile Include="Architecture\RAM\Location.cs" />
     <Compile Include="Architecture\RAM\Memory.cs" />
     <Compile Include="Architecture\CPU\Processor.cs" />
-    <Compile Include="Architecture\ArchitectureHelper.cs" />
+    <Compile Include="Architecture\Shared\ArchitectureHelper.cs" />
     <Compile Include="Architecture\CPU\Register.cs" />
+    <Compile Include="Business\Constants\AluType.cs" />
+    <Compile Include="Business\Constants\BaseType.cs" />
+    <Compile Include="Business\Constants\DbusType.cs" />
+    <Compile Include="Business\Constants\IndexType.cs" />
+    <Compile Include="Business\Constants\MemoryType.cs" />
+    <Compile Include="Business\Constants\MicrointstructionType.cs" />
+    <Compile Include="Business\Constants\OtherType.cs" />
+    <Compile Include="Business\Constants\RbusType.cs" />
+    <Compile Include="Business\Constants\SbusType.cs" />
+    <Compile Include="Business\Constants\SignType.cs" />
+    <Compile Include="Business\Constants\SuccesorType.cs" />
     <Compile Include="Business\Instructions\Generic\DiverseInstructionBo.cs" />
     <Compile Include="Business\Generics\ErrorBo.cs" />
     <Compile Include="Business\Instructions\Generic\IInstruction.cs" />
@@ -63,6 +80,21 @@
     <Compile Include="Business\Instructions\Specific\Binary\OrInstruction.cs" />
     <Compile Include="Business\Instructions\Specific\Binary\SubInstruction.cs" />
     <Compile Include="Business\Instructions\Specific\Binary\XorInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\ClrInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\AslInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\AsrInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\CallInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\DecInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\IncInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\JmpInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\LsrInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\NegInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\PopInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\PushInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\RlcInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\RolInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\RorInstruction.cs" />
+    <Compile Include="Business\Instructions\Specific\Unary\RrcInstruction.cs" />
     <Compile Include="Business\Requests\ItemIdRequestBo.cs" />
     <Compile Include="Business\Requests\ItemRequestBo.cs" />
     <Compile Include="Business\Requests\RequestBo.cs" />
@@ -73,7 +105,7 @@
     <Compile Include="Business\Constants\AdressingType.cs" />
     <Compile Include="Business\Constants\InstructionCodeType.cs" />
     <Compile Include="Business\Constants\InstructionExtensions.cs" />
-    <Compile Include="Business\Constants\InstructionHelper.cs" />
+    <Compile Include="Architecture\Shared\InstructionHelper.cs" />
     <Compile Include="Business\Constants\InstructionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
