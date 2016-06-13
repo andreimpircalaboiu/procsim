@@ -116,7 +116,7 @@ namespace ProcSimProj.Architecture.CPU
                     }
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                    throw new ArgumentOutOfRangeException("type", type, null);
             }
         }
 
